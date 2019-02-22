@@ -61,7 +61,7 @@ public class DaoMVC {
 		int i = 0;
 		Connection con = connect();
 		try {
-			String sql = "select * from employee where uname=? AND pwd=? AND etype=?";
+			String sql = "select * from employee where uname=? AND password=? AND e_type=?";
 			
 			PreparedStatement ps = con.prepareStatement(sql);
 			ps.setString(1, login.getUname());
