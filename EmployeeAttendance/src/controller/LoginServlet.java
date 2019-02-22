@@ -1,6 +1,8 @@
 package controller;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -27,9 +29,11 @@ public class LoginServlet extends HttpServlet {
 		int i=DaoMVC.checkLogin(login);
 		
 		if(i!=0) {
-			response.sendRedirect(request.getContextPath()+"/index.jsp");
+			//response.sendRedirect(request.getContextPath()+"/index.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("/PofileServlet?uname=" + uname);
+			rd.forward(request, response);
 		}else{
-			System.out.println("Values are not inserted");
+			System.out.println("Unsuccessfull Login");
 		}
 		
 	}

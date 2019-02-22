@@ -1,7 +1,7 @@
 package model;
 
 public class Employee {
-	private String emp_type,first_name,last_name,gender,dob,email,uname,pwd,s_que1,s_que2,s_que3,ans1,ans2,ans3;
+	private String emp_type,first_name,last_name,gender,dob,email,uname,pwd,s_que1,s_que2,s_que3,ans1,ans2,ans3,phone;
 
 	public String getEmp_type() {
 		return emp_type;
@@ -114,5 +114,13 @@ public class Employee {
 
 	public void setS_que3(String s_que3) {
 		this.s_que3 = s_que3;
+	}
+
+	public String getPhoneNumber() {
+		return phone;
+	}
+
+	public void setPhoneNumber(String phone) {
+		this.phone = phone;
 	}
 }

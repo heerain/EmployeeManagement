@@ -30,6 +30,7 @@ public class RegisterServlet extends HttpServlet {
 		String email = request.getParameter("email");
 		String uname = request.getParameter("uname");
 		String pwd = request.getParameter("pwd");
+		String phone = request.getParameter("phone");
 		String sque1 = request.getParameter("s_que1");
 		String ans1 = request.getParameter("ans1");
 		String sque2 = request.getParameter("s_que2");
@@ -46,6 +47,7 @@ public class RegisterServlet extends HttpServlet {
 		modelMvc.setEmail(email);
 		modelMvc.setUname(uname);
 		modelMvc.setPwd(pwd);
+		modelMvc.setPhoneNumber(phone);
 		modelMvc.setS_que1(sque1);
 		modelMvc.setAns1(ans1);
 		modelMvc.setS_que2(sque2);
