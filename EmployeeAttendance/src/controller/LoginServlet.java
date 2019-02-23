@@ -29,8 +29,8 @@ public class LoginServlet extends HttpServlet {
 		int i=DaoMVC.checkLogin(login);
 		
 		if(i!=0) {
-			//response.sendRedirect(request.getContextPath()+"/index.jsp");
-			RequestDispatcher rd = request.getRequestDispatcher("/PofileServlet?uname=" + uname);
+			request.setAttribute("uname", uname);
+			RequestDispatcher rd = request.getRequestDispatcher("/ProfileServlet");
 			rd.forward(request, response);
 		}else{
 			System.out.println("Unsuccessfull Login");

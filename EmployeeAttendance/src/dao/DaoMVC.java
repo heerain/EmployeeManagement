@@ -59,7 +59,7 @@ public class DaoMVC {
 	}
 
 	public static int checkLogin(Login login) {
-		int i = 0;
+		int i = 0; 
 		Connection con = connect();
 		try {
 			String sql = "select * from employee where uname=? AND password=? AND e_type=?";
@@ -69,8 +69,7 @@ public class DaoMVC {
 			ps.setString(2, login.getPassword());
 			ps.setString(3, login.getEtype());
 
-			ResultSet rs = ps.executeQuery();
-			
+			ResultSet rs= ps.executeQuery();
 			while(rs.next()){
 				i++;
 			}
@@ -97,8 +96,8 @@ public class DaoMVC {
 			emp.setEmp_type(rs.getString("e_type"));
 			emp.setUname(rs.getString("uname"));
 			emp.setDob(rs.getString("dob"));
-			emp.setPhoneNumber("phone");
-			
+			emp.setPhoneNumber(rs.getString("phone"));
+			emp.setEmail(rs.getString("email"));
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
